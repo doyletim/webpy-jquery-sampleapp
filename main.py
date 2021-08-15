@@ -84,7 +84,7 @@ def getAjaxArg(sArg, sDefault=""):
             dic = dict(web.input())
 
         if dic:
-            if dic.__contents__(sArg): # has_key() is depricated - use __contents__() instead
+            if dic in sArg: # has_key() is depricated - use in operator instead
                 if dic[sArg]:
                     return dic[sArg]
                 else:
