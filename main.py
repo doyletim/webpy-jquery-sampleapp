@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-
+#!/usr/bin/python3
 import web
 import os
 import json
@@ -8,7 +7,7 @@ from datetime import datetime
 # to avoid any path issues, "cd" to the web root.
 web_root = os.path.abspath(os.path.dirname(__file__))
 os.chdir(web_root)
-        
+
 urls = (
     '/', 'index',
     '/ajaxdropdowns', 'ajaxdropdowns',
@@ -19,34 +18,34 @@ urls = (
 app = web.application(urls, globals())
 render = web.template.render('templates', base='base')
 
-class index:        
+class index:
     def GET(self):
         return render.index()
 
-class ajaxdropdowns:        
+class ajaxdropdowns:
     def GET(self):
         return render.ajaxdropdowns()
 
-class getregionsasjson:        
+class getregionsasjson:
     def POST(self):
         try:
             country = getAjaxArg("country")
 
-            #something here would populate this as needed
+            # something here would populate this as needed
             if country == "USA":
                 return json.dumps(["Alabama", "Georgia", "Michigan", "Texas"])       
             if country == "Canada":
                 return json.dumps(["Newfoundland", "Manitoba", "Alberta", "France (quebec) :-)"])
 
-        except Exception, ex:
-            print ex.__str__()    
+        except Exception as e: # except Exception, ex:(depricated) - assign e as object for Exception instead
+            print (e.args) # print() already calls str() - use new e object with e.args and/or e.message
 
-class getregionsashtml:        
+class getregionsashtml:
     def POST(self):
         try:
             country = getAjaxArg("country")
 
-            #something here would populate this as needed
+            # something here would populate this as needed
             if country == "USA":
                 return """
                 <option value='Virginia'>Virginia</option>
@@ -57,10 +56,10 @@ class getregionsashtml:
                 <option value='Nunavit'>Nunavit</option>
                 <option value='Sascatchewan'>Sascatchewan</option>
                 """
-        except Exception, ex:
-            print ex.__str__()    
+        except Exception as e: # except Exception, ex:(depricated) - assign e as object for Exception instead
+            print (e.args) # print() already calls str() - use new e object with e.args and/or e.message
 
-class getanythingyouwant:        
+class getanythingyouwant:
     def POST(self):
         try:
             out = []
@@ -70,9 +69,8 @@ class getanythingyouwant:
             """)
             
             return "".join(out)
-        except Exception, ex:
-            print ex.__str__()    
-
+        except Exception as e: # except Exception, ex:(depricated) - assign e as object for Exception instead
+            print (e.args) # print() already calls str() - use new e object with e.args and/or e.message
 
 def getAjaxArg(sArg, sDefault=""):
     """Picks out and returns a single value, regardless of GET or POST."""
@@ -86,7 +84,7 @@ def getAjaxArg(sArg, sDefault=""):
             dic = dict(web.input())
 
         if dic:
-            if dic.has_key(sArg):
+            if dic.__contents__(sArg): # has_key() is depricated - use __contents__() instead
                 if dic[sArg]:
                     return dic[sArg]
                 else:
@@ -97,8 +95,6 @@ def getAjaxArg(sArg, sDefault=""):
             return sDefault
     except ValueError:
         raise Exception("getAjaxArg - no JSON arguments to decode. This method required a POST with JSON arguments.")
-
-
 
 if __name__ == "__main__":
     app.run()
