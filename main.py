@@ -38,7 +38,7 @@ class getresgionsasjson:
                 return json.dumps(["Newfoundland", "Manitoba", "Alberta", "France (quebec) :-)"])
 
         except Exception as e: # except Exception, ex:(depricated) - assign e as object for Exception instead
-            print (e.args) # print() already calls str() - use new e object with e.args and/or e.message
+            print (e.args e.message) # print() already calls str() - use new e object with e.args and/or e.message
 
 class getregionsashtml:
     def POST(self):
@@ -57,7 +57,7 @@ class getregionsashtml:
                 <option value='Sascatchewan'>Sascatchewan</option>
                 """
         except Exception as e: # except Exception, ex:(depricated) - assign e as object for Exception instead
-            print (e.args) # print() already calls str() - use new e object with e.args and/or e.message
+            print (e.args e.message) # print() already calls str() - use new e object with e.args and/or e.message
 
 class getanythingyouwant:
     def POST(self):
@@ -70,7 +70,7 @@ class getanythingyouwant:
             
             return "".join(out)
         except Exception as e: # except Exception, ex:(depricated) - assign e as object for Exception instead
-            print (e.args) # print() already calls str() - use new e object with e.args and/or e.message
+            print (e.args e.message) # print() already calls str() - use new e object with e.args and/or e.message
 
 def getAjaxArg(sArg, sDefault=""):
     """Picks out and returns a single value, regardless of GET or POST."""
