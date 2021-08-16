@@ -2,19 +2,23 @@ $def with ()
 $var jsfiles:
 $var cssfiles:
 
-<div>
-    <p>This sample app demonstrates how to deliver an HTML/jQuery web application, served by Python using web.py.</p>
-    <p>A few notable items:
-        <ul class="list-group">
-            <li class="list-group-item">jQuery is not included in this source, rather referenced from Google Code.  (Change the header in base.html if you download a local copy.)</li>
-            <li class="list-group-item">This will not be a general demonstration of 'all things jQuery', nor is it intended to be a 'how to' for building a web application.  The purpose of this application is to demonstrate specific examples of commonly asked questions in the web.py community.</li>
-            <li class="list-group-item">Code is arranged in a typical fashion, attempting to follow best practice of code separation.  There is no script in the HTML files, and (except for noted examples), ajax methods return JSON data instead of HTML markup.</li>
-        </ul>
-    </p>
+<div class="row">
+    <p>This sample app demonstrates how to deliver an HTML/jQuery web application, using by Python 3.7, web.py and jQuery.<br>
+    I plan to add more ways to use ajax in the future, but for now we've got dropdowns.<br>
+    Version information:</p>
+    <ul class="list-group">
+        <li class="list-group-item">Python 3.7.3</li>
+        <li class="list-group-item">web.py 0.6.2</li>
+        <li class="list-group-item">jQuery 3.2.1</li>
+        <li class="list-group-item">Popper.js 1.12.9</li>
+        <li class="list-group-item">Bootstrap 4</li>
+    </ul>
 </div>
-<hr>
-Most pages in this app (including this one) are delivered using web.py templates and the 'render' method.  However, keeping with the spirit of jQuery and Ajax, web.py templates aren't used beyond delivery of the page.  Content is dynamic... that's the point!
-<h3>Examples</h3>
-<div class="btn-group">
-    <a class="btn btn-primary" href="/ajaxdropdowns" role="button">Ajax Dropdowns</a>
-</ul>
+<div class="row">
+    <p>Most pages in this app (including this one) are delivered using web.py templates and the <code>render()</code> method.<br>
+    However, keeping with the spirit of jQuery and Ajax, web.py templates aren't used beyond delivery of the page. Content is dynamic... that's the point.</p>
+    <h3>Examples</h3>
+    <div class="btn-group">
+        <a class="btn btn-primary" href="/ajaxdropdowns" role="button">Ajax Dropdowns</a>
+    </div>
+</div>
