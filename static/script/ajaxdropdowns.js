@@ -18,7 +18,6 @@ $(document).ready(function() {
 		//this call will get back a JSON list, and use client side script to populate it
 		$.ajax({
 			type : "POST",
-			async : false,
 			url : "/getregionsasjson",
 			data : args,
 			contentType : "application/json; charset=utf-8",
