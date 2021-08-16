@@ -4,26 +4,36 @@ $var cssfiles:
 
 <p>On initial load, this page has static content defined in the 'countries' dropdown.</p>
 <p>Selecting a country will perform three ajax calls:
-    <ol>
-        <li>The 'Regions from JSON' picker is populated using JSON and Javascript</li>
-        <li>The 'Regions from HTML' picker is populated using HTML from the server</li>
-        <li>A generic message is returned from the server.</li>
-    </ol>
+    <ul class="list-group">
+        <li class="list-group-item">The 'Regions from JSON' picker is populated using JSON and Javascript</li>
+        <li class="list-group-item">The 'Regions from HTML' picker is populated using HTML from the server</li>
+        <li class="list-group-item">A generic message is returned from the server.</li>
+    </ul>
 </p>
 <hr>
-Countries:&nbsp;
-<select id="countries">
-    <option value="" selected="selected">--Pick One--</option>
-    <option value="Canada">Canada</option>
-    <option value="USA">USA</option>
-</select>
-
-Regions from JSON:&nbsp;
-<select id="regions"></select>
-
-Regions from HTML:&nbsp;
-<select id="regions2"></select>
-
+<form>
+    <div class="form-group row">
+        <label for="countries">Countries</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="countries">
+                <option value="" selected="selected">Choose</option>
+                <option value="Canada">Canada</option>
+                <option value="USA">USA</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="regions">Regions</label>
+        <div class="col-sm-10">
+            <select id="regions"></select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="regions2">Regions</label>
+        <div class="col-sm-10">
+            <select id="regions2"></select>
+        </div>
+    </div>
+</form>
 <hr>
-
 <div id="coolstuff"></div>

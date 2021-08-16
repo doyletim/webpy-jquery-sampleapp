@@ -1,47 +1,61 @@
 $def with (content)
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
     <head>
-        <meta charset=utf-8 />
-        <title>web.py - jQuery</title>
-        <link rel="shorcut icon" href="static/images/favicon.png" />
-        <!-- Imp CSS -->
-        <link type="text/css" href="static/style/main.css" rel="stylesheet" />
-        <!-- jQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-        <!-- Javascript -->
-        <script src="static/script/base.js"></script>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!--Any .js files defined on the content page.-->
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!-- TODO: move to footer -->
+        <!-- Include *.js files defined in the content page -->
 $if content.jsfiles:
     $for f in content.jsfiles.split():
         <script type="text/javascript" src="static/script/$f"></script>
 
-        <!--Any .css files defined on the content page.-->
+        <!-- Include *.css files defined on the content page -->
 $if content.cssfiles:
 	$for f in content.cssfiles.split():
-		<link type="text/css" href="static/style/$f" rel="stylesheet" />
-
+		<link type="text/css" href="static/style/$f" rel="stylesheet">
+            
+        <title>web.py - jQuery</title>
     </head>
     <body>
-        <div id="app_header" class="ui-widget-header blur">
-            <div id="app_header_logo" class="floatleft pointer"></div>
-            <div id="app_header_title" class="floatleft">web.py + jQuery Examples</div>
-            <div id="app_header_icons" class="floatright">
-                <img id="settings_btn" class="pointer" src="static/images/settings_24.png" alt="Settings" title="Settings" >
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="app_header">
+            <a class="navbar-brand" id="app_header_logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" id="app_header_icons">
+                            <img id="settings_btn" src="static/images/settings_24.png" alt="Settings" title="Settings" > <span class="sr-only">(current)</span></a>
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </div>
-        <div id="app_footer" class="ui-widget-header blur">
-            <div id="app_version" class="floatleft" style="margin-left: 10px;">
+        </nav>
+        <section>
+            <div class="float-left" id="app_version" >
                 &copy; 2012 your company
             </div>
             <div id="app_version" class="floatright" style="margin-right: 10px;"></div>
-        </div>
-        <div id="fullwidthcontent" class="min900px">
+        </section>
+        <div class="clearfix" id="fullwidthcontent">
             <!-- This is the MAIN Content section. -->
 $:content
             <!--  End MAIN Content section. -->
         </div>
+        <!-- Optional JavaScript -->
+        <script src="static/script/base.js"></script>
+        
+        <!-- jQuery, Popper.js and Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 </html>
