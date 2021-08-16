@@ -23,34 +23,35 @@ $if content.cssfiles:
         <title>web.py - jQuery</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="app_header">
-            <a class="navbar-brand" id="app_header_logo"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" id="app_header_icons">
-                            <img id="settings_btn" src="static/images/settings_24.png" alt="Settings" title="Settings" > <span class="sr-only">(current)</span></a>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <section>
-            <div class="float-left" id="app_version" >
-                &copy; 2012 your company
-            </div>
-            <div id="app_version" class="floatright" style="margin-right: 10px;"></div>
-        </section>
-        <div class="clearfix" id="fullwidthcontent">
-            <!-- This is the MAIN Content section. -->
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" id="app_header">
+                <a class="navbar-brand" id="app_header_logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" id="app_header_icons">
+                                <img id="settings_btn" src="static/images/settings_24.png" alt="Settings" title="Settings" > <span class="sr-only">(current)</span></a>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="row">
+            <!-- Python render() -->
 $:content
-            <!--  End MAIN Content section. -->
-        </div>
-        <!-- Optional JavaScript -->
+            </div>
+            <footer class="row">
+                <div class="float-lef" id="app_version">
+                    &copy; 2012 your company
+                </div>
+                <div id="app_version" class="float-right"></div>
+            </footer>
+        </div> <!-- .container -->
+
+     s   <!-- Optional JavaScript -->
         <script src="static/script/base.js"></script>
         
         <!-- jQuery, Popper.js and Bootstrap JS -->

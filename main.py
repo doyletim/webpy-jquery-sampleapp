@@ -26,7 +26,7 @@ class ajaxdropdowns:
     def GET(self):
         return render.ajaxdropdowns()
 
-class getregionsasjson:
+class getresgionsasjson:
     def POST(self):
         try:
             country = getAjaxArg("country")
