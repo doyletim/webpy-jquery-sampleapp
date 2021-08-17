@@ -2,7 +2,7 @@ $def with ()
 $var jsfiles: ajaxdropdowns.js
 $var cssfiles:
 
-<div class="container">
+<main role="main" class="container">
     <div class="row">
         <p>On initial load, this page has static content defined in the <strong>Countries</strong> picker.<br>
         Selecting a country will perform three ajax calls:</p>
@@ -15,7 +15,7 @@ $var cssfiles:
 
     <div class="row">
         <div class="form-group row">
-            <label for="countries" class="col-sm-2 col-form-label">Countries</label>
+            <label for="countries" class="col-sm col-form-label">Countries</label>
             <div class="col-sm">
                 <select class="form-control form-control-lg" id="countries">
                     <option value="" selected="selected">Choose</option>
@@ -25,20 +25,16 @@ $var cssfiles:
             </div>
         </div>
         <div class="form-group row">
-            <label for="regions" class="col-sm-2 col-form-label">Regions</label>
+            <label for="regions" class="col-sm col-form-label">Regions</label>
             <div class="col-sm">
                 <select class="form-control form-control-lg" id="regions"></select>
             </div>
         </div>
         <div class="form-group row">
-            <label for="regions2" class="col-sm-2 col-form-label">Regions 2</label>
+            <label for="regions2" class="col-sm col-form-label">Regions 2</label>
             <div class="col-sm">
                 <select class="form-control form-control-lg" id="regions2"></select>
             </div>
         </div>
     </div><!-- /.row -->
-
-    <div class="row">
-        <div id="coolstuff"></div>
-    </div>
-</div><!-- /.container -->
+</main><!-- /.container -->
