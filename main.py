@@ -26,7 +26,7 @@ class ajaxdropdowns:
     def GET(self):
         return render.ajaxdropdowns()
 
-class getresgionsasjson:
+class getregionsasjson:
     def POST(self):
         try:
             country = getAjaxArg("country")
@@ -38,7 +38,7 @@ class getresgionsasjson:
                 return json.dumps(["Newfoundland", "Manitoba", "Alberta", "France (quebec) :-)"])
 
         except Exception as e: # except Exception, ex:(depricated) - assign e as object for Exception instead
-            print (e.args e.message) # print() already calls str() - use new e object with e.args and/or e.message
+            print (e.args) # print() already calls str() - use new e object with e.args
 
 class getregionsashtml:
     def POST(self):
@@ -57,20 +57,19 @@ class getregionsashtml:
                 <option value='Sascatchewan'>Sascatchewan</option>
                 """
         except Exception as e: # except Exception, ex:(depricated) - assign e as object for Exception instead
-            print (e.args e.message) # print() already calls str() - use new e object with e.args and/or e.message
+            print (e.args) # print() already calls str() - use new e object with e.args
 
 class getanythingyouwant:
     def POST(self):
         try:
             out = []
-            out.append("Current Time is: %s<br />" % datetime.now())
+            out.append("Current Time is: %s<br>" % datetime.now())
             out.append("""You could do anything you wanted in here.  Full html, go get content from another
             site using urllib, parse an rss feed and format it for your site, etc.
             """)
-            
             return "".join(out)
         except Exception as e: # except Exception, ex:(depricated) - assign e as object for Exception instead
-            print (e.args e.message) # print() already calls str() - use new e object with e.args and/or e.message
+            print (e.args) # print() already calls str() - use new e object with e.args
 
 def getAjaxArg(sArg, sDefault=""):
     """Picks out and returns a single value, regardless of GET or POST."""
