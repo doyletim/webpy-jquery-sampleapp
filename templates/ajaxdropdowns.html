@@ -1,6 +1,46 @@
 $def with ()
-$var jsfiles: ajaxdropdowns.js
-$var cssfiles:
+$var js: ajaxdropdowns.js
+$var css: style.css
+
+<header role="header" class="container">
+    <div class="jumbotron jumbotron-fluid text-light">
+        <h1 class="display-4">Dropdowns</h1>
+        <p class="lead">Dynamically populated dropdowns with <strong>web.py</strong> on the server-side and <strong>jQuery</strong> on the client-side. The first dropdown is plain static HTML in this page, the second fetches a JSON object from the server, and the third dropdown fetches plain HTML from the server..</p>
+        <hr class="my-4">
+        <p>Like this...</p>
+        <form class="form-inline justify-content-center">
+            <div class="form-group">
+                <!--<label for="countries" class="col-sm-2 col-form-label col-form-label-lg">Label</label>-->
+                <label for="countries" class="col">Static:</label>
+                <!--<div class="col-sm-2">-->
+                <div class="col">
+                    <select class="form-control form-control-lg" id="countries">
+                        <option value="" selected="selected">Choose</option>
+                        <option value="Canada">Canada</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="regions" class="col">Ajax JSON:</label>
+                <div class="col">
+                    <select class="form-control form-control-lg" id="regions">
+                        <option value="" selected="selected">Choose</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="regions2" class="col">Ajax HTML:</label>
+                <div class="col">
+                    <select class="form-control form-control-lg" id="regions2">
+                        <option value="" selected="selected">Choose</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</header>
+<!-- /.container -->
 
 <main role="main" class="container">
     <div class="row">
