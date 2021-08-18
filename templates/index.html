@@ -1,25 +1,13 @@
 $def with ()
-$var jsfiles:
-$var cssfiles:
+$var js:
+$var css:
 
-<main role="main" class="container">
-    <div class="row">
-        <div class="jumbotron">
-            <h1 class="display-4">webpy-jquery-sampleapp</h1>
-            <p class="lead">Using the web.py framework with jQuery, and wrappping it up with some Bootstrap 4.</p>
-            <hr class="my-4">
-            <p>Check out some examples.</p>
-            <a class="btn btn-primary btn-lg" href="/ajaxdropdowns" role="button">Dropdowns</a>
-        </div>
-    </div><!-- /.row -->
-
-    <div class="row">
-        <div class="card text-white bg-dark mb-8">
-            <div class="card-header">&#x2139;</div>
-            <div class="card-body">
-                <h5 class="card-title">What's going on here?</h5>
-                <p>Pages are rendered from <strong>web.py</strong> templates using the <code>render()</code> method. <code>GET</code> and <code>POST</code> calls are handled by jQuery on client-side, and Python on server-side.</p>
-            </div>
-        </div>
-    </div><!-- /.row -->
-</main><!-- /.container -->
+<header class="container">
+    <div class="jumbotron jumbotron-fluid bg-transparent">
+        <h1 class="display-4">Homepage</h1>
+        <p class="lead">Dynamic content with <strong>web.py</strong> on the server-side and <strong>jQuery</strong> on the client-side. Then some <strong>Bootstrap 4</strong> to make it look pretty.</p>
+        <hr class="my-4">
+        <p>Examples</p>
+        <a class="btn btn-succes">Dropdowns</a>
+    </div>
+</header>
