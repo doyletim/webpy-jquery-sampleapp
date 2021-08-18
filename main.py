@@ -9,8 +9,8 @@ web_root = os.path.abspath(os.path.dirname(__file__))
 os.chdir(web_root)
 
 urls = (
-    '/', 'index',
-    '/ajaxdropdowns', 'ajaxdropdowns',
+    '/', 'home',
+    '/dropdown', 'dropdown',
     '/getanythingyouwant', 'getanythingyouwant',
     '/getregionsashtml', 'getregionsashtml',
     '/getregionsasjson', 'getregionsasjson'
@@ -18,13 +18,13 @@ urls = (
 app = web.application(urls, globals())
 render = web.template.render('templates', base='base')
 
-class index:
+class home:
     def GET(self):
-        return render.index()
+        return render.home()
 
-class ajaxdropdowns:
+class dropdown:
     def GET(self):
-        return render.ajaxdropdowns()
+        return render.dropdown()
 
 class getregionsasjson:
     def POST(self):
