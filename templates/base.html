@@ -1,6 +1,4 @@
 $def with (content)
-$var js:
-$var css: style.css sticky-footer.css
 <!doctype html>
 <html lang="en">
     <head>
@@ -10,12 +8,12 @@ $var css: style.css sticky-footer.css
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="static/style/style.css">
         <link rel="stylesheet" href="static/style/sticky-footer.css">
 
-
-        <script src="static/script/base.js"></script>
-
-        <!-- Include *.css files defined on the content page -->
+        <!-- Include CSS CSS defined on the content page -->
 $if content.css:
 	$for f in content.css.split():
 		<link type="text/css" href="static/style/$f" rel="stylesheet">
@@ -47,11 +45,14 @@ $:content
             </div>
         </footer>
         <!-- /.content -->
+
         <!-- jQuery, Popper.js and Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <!-- Optional JS -->
+        
+        <!-- Custom JS -->
+        <script src="static/script/base.js"></script>
 $if content.js:
     $for f in content.js.split():
         <script src="static/script/$f"></script>
