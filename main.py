@@ -3,6 +3,7 @@ import web
 import os
 import json
 from datetime import datetime
+import gviz_api
 
 # to avoid any path issues, "cd" to the web root.
 web_root = os.path.abspath(os.path.dirname(__file__))
@@ -12,6 +13,7 @@ urls = (
     '/', 'home',
     '/dropdown', 'dropdown',
     '/chart', 'chart',
+    '/json_chart', 'json_chart',
     '/getanythingyouwant', 'getanythingyouwant',
     '/getregionsashtml', 'getregionsashtml',
     '/getregionsasjson', 'getregionsasjson'
@@ -30,7 +32,26 @@ class dropdown:
 class chart:
     def GET(self):
         return render.chart()
-        
+
+class json_chart:
+    def POST(self):
+        try:
+            description = {"kph": (55, "Speed")}
+            data = [{"kph": (0, "Speed")},
+                {"kph": (41, "Speed")},
+                {"kph": (98, "Speed")},
+                {"kph": (82, "Speed")}
+            ]
+            # Loading it into gviz_api.DataTable
+            data_table = gviz_api.DataTable(description)
+            data_table.LoadData(data)
+
+
+            return (data_table.ToJSonResponse(columns_order=("kph"), order_by="kph"))
+
+        except Exception as e:
+                print(e.args)
+            
 class getregionsasjson:
     def POST(self):
         try:
@@ -77,7 +98,7 @@ class getanythingyouwant:
             print (e.args) # print() already calls str() - use new e object with e.args
 
 def getAjaxArg(sArg, sDefault=""):
-    """Picks out and returns a single value, regardless of GET or POST."""
+    #"""Picks out and returns a single value, regardless of GET or POST."""
     try:
         data = web.data()
         dic = None

@@ -3,10 +3,7 @@ google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
 
-var data = google.visualization.arrayToDataTable([
-  ['Label', 'Value'],
-  ['KPH', 25]
-]);
+var data = google.visualization.DataTable(%(json)s, 0.6));
 
 var options = {
   width: 400, height: 120,
