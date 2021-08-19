@@ -28,10 +28,7 @@ class dropdown:
         return render.dropdown()
 
 class chart:
-    def POST(self):
-        a = {"kph", 45}
-        b = json.dumps(a)
-        print (b)
+    def GET(self):
         return render.chart()
         
 class getregionsasjson:
