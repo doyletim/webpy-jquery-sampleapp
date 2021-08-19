@@ -23,20 +23,16 @@ render = web.template.render('templates', base='base')
 
 class home:
     def GET(self):
+        return render.home()
+        
+class gauge:
+    def POST(self):
         x = {
             "kph": 45
         }
         y = json.dumps(x)
         print (y)
-
-        return render.home()
-        
-class gauge:
-    def GET(self):
-        x = {
-            "kph": 45
-        }
-        y = json.dumps(x)
+        print (type(y))
         return y
 
 class dropdown:
