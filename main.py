@@ -47,7 +47,7 @@ class json_chart:
             data_table.LoadData(data)
 
 
-            return (data_table.ToJSonResponse(columns_order=("kph"), order_by="kph"))
+            print(data_table.ToJSonResponse(columns_order=("kph"), order_by="kph"))
 
         except Exception as e:
                 print(e.args)
