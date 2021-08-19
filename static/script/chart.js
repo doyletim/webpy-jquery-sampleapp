@@ -6,7 +6,7 @@ function drawChart() {
         return $.get('/gauge')
     };
 
-    var data = google.visualization.DataTable(json);
+    var data = new google.visualization.DataTable(json);
 
     var options = {
         width: 400, height: 120,
