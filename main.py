@@ -13,7 +13,7 @@ urls = (
     '/', 'home',
     '/dropdown', 'dropdown',
     '/chart', 'chart',
-    '/json_chart', 'json_chart',
+    '/gauge', 'gauge',
     '/getanythingyouwant', 'getanythingyouwant',
     '/getregionsashtml', 'getregionsashtml',
     '/getregionsasjson', 'getregionsasjson'
@@ -47,25 +47,6 @@ class chart:
     def GET(self):
         return render.chart()
 
-class json_chart:
-    def POST(self):
-        try:
-            description = {"kph": (55, "Speed")}
-            data = [{"kph": (0, "Speed")},
-                {"kph": (41, "Speed")},
-                {"kph": (98, "Speed")},
-                {"kph": (82, "Speed")}
-            ]
-            # Loading it into gviz_api.DataTable
-            data_table = gviz_api.DataTable(description)
-            data_table.LoadData(data)
-
-
-            print(data_table.ToJSonResponse(columns_order=("kph"), order_by="kph"))
-
-        except Exception as e:
-                print(e.args)
-            
 class getregionsasjson:
     def POST(self):
         try:

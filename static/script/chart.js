@@ -3,7 +3,7 @@ google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
     var json = function() {
-        return $.get('/speed')
+        return $.get('/gauge')
     };
 
     var data = google.visualization.DataTable(json);
