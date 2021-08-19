@@ -23,7 +23,14 @@ render = web.template.render('templates', base='base')
 
 class home:
     def GET(self):
+        x = {
+            "name": "George",
+            "age": 30,
+            "city": "Adelaide"
+        }
+        y = json.dumps(x)
         return render.home()
+        print (y)
 
 class dropdown:
     def GET(self):
