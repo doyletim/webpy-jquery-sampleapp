@@ -29,8 +29,9 @@ class home:
             "city": "Adelaide"
         }
         y = json.dumps(x)
-        return render.home()
         print (y)
+
+        return render.home()
 
 class dropdown:
     def GET(self):
