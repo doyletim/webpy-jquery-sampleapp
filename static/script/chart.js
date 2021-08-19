@@ -1,9 +1,23 @@
-google.charts.load('current', {'packages':['gauge']});
-google.charts.setOnLoadCallback(drawChart);
+(function() {
+    google.charts.load('current', {'packages':['gauge']});
+    google.charts.setOnLoadCallback(drawChart);
 
-function drawChart() {
+    function drawChart() {
 
-var data = google.visualization.DataTable(%(json)s, 0.6));
+        var fetchValues = function() {
+            return $.get('/json_chart',
+            {
+                'description' : 'kph'
+            }).pipe(function (res) {
+                var ary = [['Label', 'Value']];
+                for (var i = 0; i < res.length; i++) {
+                    ary.push([res[i].description, parseInt(res[i].value)]);
+                }
+                return ary;
+            });
+        };
+
+        var data = google.visualization.DataTable();
 
 var options = {
   width: 400, height: 120,
