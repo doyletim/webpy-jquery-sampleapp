@@ -26,7 +26,7 @@ class home:
         return render.home()
         
 class gauge:
-    def POST(self):
+    def GET(self):
         x = {
             "kph": 45
         }
