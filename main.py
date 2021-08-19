@@ -11,6 +11,7 @@ os.chdir(web_root)
 urls = (
     '/', 'home',
     '/dropdown', 'dropdown',
+    '/chart', 'chart',
     '/getanythingyouwant', 'getanythingyouwant',
     '/getregionsashtml', 'getregionsashtml',
     '/getregionsasjson', 'getregionsasjson'
@@ -25,7 +26,10 @@ class home:
 class dropdown:
     def GET(self):
         return render.dropdown()
-
+class chart:
+    def GET(self):
+        return render.chart()
+        
 class getregionsasjson:
     def POST(self):
         try:
