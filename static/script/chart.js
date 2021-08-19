@@ -2,9 +2,11 @@ google.charts.load('current', {'packages':['gauge']});
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
-    var json = function() {
-        return $.get('/gauge')
-    };
+    var json = $.ajax({
+        url: "/gauge",
+        dataType:"json",
+        async: false
+    }).responseText;
 
     var data = new google.visualization.DataTable(json);
 
