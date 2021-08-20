@@ -15,7 +15,7 @@ function drawChart() {
         alert('Exception:', exception);
     })
 
-    var data = new google.visualization.DataTable(json);
+    //var data = new google.visualization.DataTable(json);
 
     var options = {
         //width: 400, height: 120,
@@ -25,9 +25,9 @@ function drawChart() {
         minorTicks: 5
     };
 
-    var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+    //var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
 
-    chart.draw(data, options);
+    //chart.draw(data, options);
 
     //setInterval(function() {
     //    //data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
