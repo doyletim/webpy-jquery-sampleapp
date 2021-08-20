@@ -7,6 +7,20 @@ $var css:
         <h1 class="display-4">Chart</h1>
         <p class="lead">Chart hero..</p>
         <hr class="my-4">
-        <div class="mx-auto w-50" id="chart_div"></div>
+        <a href class="btn btn-success btn-lg" id="a1"></a>
     </div>
 </header>
+<script>
+$('#a1').click(function() {
+    $.ajax({
+        url: '/gauge',
+        type: 'GET',
+        success: function(result) { //we got the response
+            alert('Successfully called');
+        },
+        error: function(jqxhr, status, exception) {
+            alert('Exception:', exception);
+        }
+    })
+})
+</script>
