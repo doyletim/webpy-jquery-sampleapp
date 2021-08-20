@@ -4,7 +4,7 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
     var json = $.ajax({
         url: '/gauge',
-        type: 'GET',
+        type: 'POST',
         //dataType:"json",
         //async: false
     },
