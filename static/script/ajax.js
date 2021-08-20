@@ -5,7 +5,7 @@ $('#a1').click(function() {
         success: function(result) { //we got the response
             alert('Successfully called');
         },
-        error: function(req, err){ console.log('my message' + err); }
+        error: function(req, err){ alert('Broken ' + err); }
 
     })
 })
