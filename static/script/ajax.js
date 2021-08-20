@@ -6,7 +6,4 @@ $('#a1').click(function() {
     .done(function(data) {alert("Gzgz")})
     .fail(function(xhr, status, error) {
         var errorMessage = xhr.status + ': ' + xhr.statusText
-        alert('Error - ' + errorMessage);
-    }
-})
-)
+        alert('Error - ' + errorMessage);})})
