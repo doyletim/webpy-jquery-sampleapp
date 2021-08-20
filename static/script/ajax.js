@@ -4,6 +4,8 @@ $('#a1').click(function() {
         type: 'GET'
     })
     .done(function(data) {alert("Gzgz")})
-    .fail(function(xhr, status, error) {
-        var errorMessage = xhr.status + ': ' + xhr.statusText
-        alert('Error - ' + errorMessage);})})
+    .fail(function(xhr, errorType, exception) {
+        var errorMessage = exception || xhr.statusText;
+        alert("Excep:: "+exception +"Status:: "+xhr.statusText);
+    })
+})
