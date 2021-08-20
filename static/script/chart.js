@@ -23,7 +23,7 @@ function drawChart() {
     chart.draw(data, options);
 
     setInterval(function() {
-        data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+        //data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
         chart.draw(data, options);
     }, 10000);
 }
