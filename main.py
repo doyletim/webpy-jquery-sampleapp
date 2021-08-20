@@ -30,12 +30,8 @@ class gauge:
         x = {
             "kph": 45
         }
-        y = json.dumps(x)
-        print (y)
-        print (type(y))
-        return "Content-type: application/json"
-        return
-        return y
+        web.header('Content-Type', 'application/json')
+        return json.dumps(x)
 
 class dropdown:
     def GET(self):
