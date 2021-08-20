@@ -11,7 +11,7 @@ function drawChart() {
     var data = new google.visualization.DataTable(json);
 
     var options = {
-        width: 400, height: 120,
+        //width: 400, height: 120,
         redFrom: 90, redTo: 100, redColor: '#d9534f',
         yellowFrom: 75, yellowTo: 90, yellowColor: '#f0ad4e',
         greenFrom: 0, greenTo: 70, greenColor: '#5cb85c',
