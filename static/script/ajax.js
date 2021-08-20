@@ -5,8 +5,7 @@ $('#a1').click(function() {
         success: function(result) { //we got the response
             alert('Successfully called');
         },
-        error: function(jqxhr, status, exception) {
-            alert('Exception:', exception);
-        }
+        error: function(req, err){ console.log('my message' + err); }
+
     })
 })
