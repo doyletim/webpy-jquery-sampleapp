@@ -1,5 +1,5 @@
 $def with ()
-$var js:
+$var js: chart.js
 $var css:
 
 <header class="container">
@@ -7,20 +7,6 @@ $var css:
         <h1 class="display-4">Chart</h1>
         <p class="lead">Chart hero..</p>
         <hr class="my-4">
-        <a href class="btn btn-success btn-lg" id="a1"></a>
+        <div class="mx-auto w-50" id="chart_div"></div>
     </div>
 </header>
-<script>
-$('#a1').click(function() {
-    $.ajax({
-        url: '/gauge',
-        type: 'GET',
-        success: function(result) { //we got the response
-            alert('Successfully called');
-        },
-        error: function(jqxhr, status, exception) {
-            alert('Exception:', exception);
-        }
-    })
-})
-</script>
