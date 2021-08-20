@@ -33,6 +33,8 @@ class gauge:
         y = json.dumps(x)
         print (y)
         print (type(y))
+        return "Content-type: application/json"
+        return
         return y
 
 class dropdown:
