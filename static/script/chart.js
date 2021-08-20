@@ -3,10 +3,17 @@ google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
     var json = $.ajax({
-        url: "/gauge",
+        url: '/gauge',
+        type: 'GET',
         //dataType:"json",
-        async: false
-    }).responseText;
+        //async: false
+    },
+    success: function(result) { //we got the response
+        alert('Successfully called');
+    },
+    error: function(jqxhr, status, exception) {
+        alert('Exception:', exception);
+    })
 
     var data = new google.visualization.DataTable(json);
 
@@ -22,8 +29,8 @@ function drawChart() {
 
     chart.draw(data, options);
 
-    setInterval(function() {
-        //data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-        chart.draw(data, options);
-    }, 10000);
+    //setInterval(function() {
+    //    //data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+    //    chart.draw(data, options);
+    //}, 10000);
 }
