@@ -1,37 +1,27 @@
+function drawChart() {
+    var options = {
+        width: 480, height: 480,
+        greenColor: '#5cb85c', greenFrom: 0, greenTo: 29,
+        yellowColor: '#f0ad4e', yellowFrom: 40, yellowTo: 49,
+        redColor: '#d9534f', redFrom: 50, redTo: 60,
+        max: 60,
+        minorTicks: 5
+    };
+    $.ajax({
+        url: "/gauge",
+        dataType: "json"
+    }).done(function(data) {
+        var arr = [["KPh"]];
+        $.each(data.kph, function() {
+            var kph = [this.kph];
+            arr.push(kph);
+        });
+        var data = google.visualization.arrayToDataTable(arr);
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+        chart.draw(data, options);
+        //$("h3").append(" Sorted by  "+dimension);
+    });
+}
 google.charts.load('current', {'packages':['gauge']});
 google.charts.setOnLoadCallback(drawChart);
 
-function drawChart() {
-    var json = $.ajax({
-        url: '/gauge',
-        type: 'POST',
-        //dataType:"json",
-        //async: false
-    },
-    success: function(result) { //we got the response
-        alert('Successfully called');
-    },
-    error: function(jqxhr, status, exception) {
-        alert('Exception:', exception);
-    })
-
-    //var data = new google.visualization.DataTable(json);
-
-    var options = {
-        //width: 400, height: 120,
-        redFrom: 90, redTo: 100, redColor: '#d9534f',
-        yellowFrom: 75, yellowTo: 90, yellowColor: '#f0ad4e',
-        greenFrom: 0, greenTo: 70, greenColor: '#5cb85c',
-        minorTicks: 5
-    }//;
-
-
-    //var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-
-    //chart.draw(data, options);
-
-    //setInterval(function() {
-    //    //data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-    //    chart.draw(data, options);
-    //}, 10000);
-}
