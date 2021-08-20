@@ -23,7 +23,8 @@ function drawChart() {
         yellowFrom: 75, yellowTo: 90, yellowColor: '#f0ad4e',
         greenFrom: 0, greenTo: 70, greenColor: '#5cb85c',
         minorTicks: 5
-    };
+    }//;
+
 
     //var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
 
